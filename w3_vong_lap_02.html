@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp 2</title>
+</head>
+<body>
+    --------------------///in day fibonaci ra man hinh////-----------------------<br>
+    ----------------------------------------------------------------------------------<br>
+    <script>
+
+        let m = Number(prompt('nhap so phan tu can in trong day fibonaci'));
+        DislayFibonaci(m);
+        function DislayFibonaci(n) {
+            let first = 1;
+            let second = 1;
+            let number;
+            if(n === 1)
+                document.write(first);
+            if(n === 2)
+                document.write(second);
+            if(n > 2) {
+                document.write('f(1) =  ' + first + "<br>");
+                document.write('f(2) =  ' + second + "<br>");
+                for (let i = 3; i <= n; i++) {
+                    number = first + second;
+                    document.write('f(' + i + ') = ' + number + "<br>");
+                    second = first;
+                    first = number;
+                }
+            }
+        }
+
+    </script>
+    <hr>
+    --------------------///tinh giai thua so nguyen duong////--------------------<br>
+    ----------------------------------------------------------------------------------<br>
+    <script>
+    let GiaiThua = 1;
+    let n = Number(prompt('nhap so can tinh gia thua'));
+    while(n < 0)
+        n = prompt('nhap lai so >= 0');
+    if(n === 0)
+        document.write('0! = 1');
+    else {
+        for (let i = 1; i <= n; i++)
+            GiaiThua *= i;
+        document.write(+n + '! = ' + GiaiThua);
+    }
+    </script>
+    <hr>
+    --------------------///in tam giac vuong goc vuong vị tri khac nhau////--------------------<br>
+    ----------------------------------------------------------------------------------<br>
+    <script>
+        triangle_1();
+        traingle_2();
+        traingle_3();
+        traingle_4();
+        traingle_5();
+        Rectang();
+        /////////////////////////////////////////////
+        function triangle_1() {
+            for (let i = 0; i < 5; i++) {
+                for (let j = 0; j< 5; j++) {
+                    document.write(' * ');
+                }
+                document.write(' * ' + "<br>");
+            }
+            let row = "<br>";
+            document.write(row);
+        }
+        ////////////////////////////////////////////////
+        function traingle_2() {
+            for (let i = 0; i < 5; i++) {
+                for (let j = i + 1; j < 5; j++) {
+                    document.write(' * ');
+                }
+                document.write(' * ' + "<br>");
+            }
+            let row = "<br>";
+            document.write(row);
+        }
+        ////////////////////////////////////////
+        function traingle_3() {
+            for (let i = 5; i > 0 ; i--) {
+                for (let j = 5; j > i; j--) {
+                    document.write(' * ');
+                }
+
+                document.write(' * ' + "<br>");
+            }
+            let row = "<br>";
+            document.write(row);
+        }
+        ///////////////////////////////////////////////////
+        function traingle_4() {
+            for (let i = 0; i < 5; i++) {
+                for (let j = 1; j < 5 - i; j++) {
+                    document.write('&nbsp&nbsp&nbsp');
+                }
+                for(let k = 0; k < i + 1; k++) {
+                    document.write(' * ');
+                }
+                document.write("<br>");
+            }
+            let row = "<br>";
+            document.write(row);
+        }
+        ///////////////////////////////////////////////////////
+        function traingle_5() {
+            for (let i = 5; i > 0 ; i--) {
+                for (let j = 5; j > i; j--) {
+                    document.write('&nbsp&nbsp&nbsp');
+                }
+                for(let k = 0; k < i; k++) {
+                    document.write(' * ');
+                }
+                document.write("<br>");
+            }
+            let row = "<br>";
+            document.write(row);
+        }
+    /////////////////////////////// drawing Rectang//////////////
+        function Rectang() {
+            for(let i = 0; i < 7; i++) {
+                document.write(' * ');
+                if (i === 0) {
+                    for (let j = 0 ; j < 21; j ++)
+                        document.write(' * ');
+                }
+                if(i >= 1 && i <= 5) {
+                    for (let j = 0; j < 21; j++)
+                        document.write('&nbsp&nbsp&nbsp');
+                }
+                if(i === 6) {
+                    for(let j = 0; j < 21; j ++) {
+                        document.write(' * ');
+                    }
+                }
+                document.write(' * ' +'<br>');
+            }
+        }
+////////////////////////////////Drawing heart//////////////////////
+
+
+    </script>
+</body>
+</html>
