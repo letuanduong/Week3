@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 1</title>
+</head>
+<body>
+    <script>
+        let Integer = [];
+        let Integer2 = [];
+        let Integer3 = [];
+        let n;
+        let m;
+        let index;
+        let max;
+
+        ///////creat array 10 element , value: 0->19
+        for(let i = 0; i < 10; i++) {
+            Integer[i] = Math.floor(Math.random()*20);
+        }
+        for (let k = 0; k < Integer.length; k++) {
+            document.write(Integer[k] + ''+'<br>');
+        }
+
+        document.write('<hr>');
+        ///// dislay element bigger 10///////
+        for(let index = 0; index < Integer.length; index++) {
+            if(Integer[index] > 10) {
+                document.write(Integer[index] +'&nbsp');
+            }
+        }
+        document.write('<br>');
+        ////////dislay element less 10//////////////
+        document.write('<br>');
+        for(let index = 0; index < Integer.length; index++) {
+            if(Integer[index] < 10) {
+                document.write(Integer[index] +'&nbsp');
+            }
+        }
+        document.write('<br>')
+        //////seach max element in array////////////
+        let max = Integer[0];
+        let count;
+        for(let j = 1; j < Integer.length; j++) {
+            if(max < Integer[j]) {
+                max = Integer[j];
+                count = j + 1;
+            }
+        }
+        document.write('phan tu lon nhat trong mang la: ' +max +' vi tri so: ' +count+'<hr>');
+
+        ////tinh gia tri trung binh cua mang//////////////
+        let total = 0;
+        for(n = 0; n < Integer.length; n++) {
+            total += Integer[n];
+        }
+        document.write('gia tri trung binh cua mang la: ' +(total/10) +'<hr>');
+        /////////dao nguoc mang/////////
+        let reverse;
+        for(n = 0; n < (Integer.length/2); n++) {
+            reverse = Integer[n];
+            Integer[n] = Integer[(Integer.length) - n -1];
+            Integer[(Integer.length) - n -1] = reverse;
+        }
+        for (n = 0; n < Integer.length; n++) {
+            document.write(Integer[n] +'<br>');
+        }
+        ///////////đếm số nguyên âm trong mang//////
+        count = 0;
+        for(n < 0; n < Integer; n++) {
+            if(Integer[n] < 0)
+                count++
+        }
+        document.write('so phan tu trong chuoi nho hon 0 la:' +count +'<hr>');
+        //////tim kiem phan tu co tron mang khong////////
+        //===============================================================
+        let inputNumber = prompt('nhap phan tu can tim');
+        for(n = 0; n < Integer.length; n++) {
+            if(Integer[n] === inputNumber) {
+               n  = 1;
+            }
+        }
+        n !== 1 ? document.write(inputNumber + ' có trong mảng so nguyen') : document.write(inputNumber +' khong co trong mang so nguyen' +'<br>');
+        document.write('<hr>');
+
+
+        //======================Xoa phan tu khoi mang======================
+        //================================================================//
+        let erase = Number(prompt('Nhap phan tu cn xoa'));
+        index = 0;
+        for(n = 0; n < Integer.length; n++) {
+            if(Integer[n] === erase) {
+                index++;
+                for(m = n; m < Integer.length; m++) {
+                    Integer[m] = Integer[m + 1];
+                }
+            }
+        }
+        for(n = Integer.length - index; n < Integer.length; n++)
+            Integer[n] = 0;
+        for (n = 0; n < Integer.length; n++) {
+            document.write(Integer[n] + '<br>');
+        }
+
+        document.write('<hr>');
+        //====================Nối hai mảng================//
+        index = 0;
+        for(n = 0; n < 10; n++) {  /////tao mang 2
+            Integer2[n] = Math.floor(Math.random()*20);
+        }
+        for (n = 0; n < Integer.length; n++) {           //in mang 2
+            document.write(Integer2[n] + ''+'<br>');
+        }
+        document.write('<hr>');
+        for(n = 0; n < Integer.length; n++) { /////noi mang 1 va 2 voa mang 3
+            Integer3[n] = Integer[n];
+        }
+        for (n = Integer.length; n < Integer.length + Integer2.length; n++) {
+            Integer3[n] = Integer2[index++];
+        }
+        for(n = 0; n < Integer.length + Integer2.length; n++)
+            document.write(Integer3[n]+'<br>');
+
+        document.write('<hr>');
+        //====================Sắp xếp mảng Integer=================///
+        document.write('mảng sau khi sắp xếp theo thứ tự giảm dần');
+        for(n = 0; n < Integer.length; n++) {
+            for (m = n + 1; m < Integer.length; m++)
+            {
+                if(Integer[n] < Integer[m]) {
+                    max = Integer[n];
+                    Integer[n] = Integer[m];
+                    Integer[m] = max;
+                }
+            }
+        }
+      for (n = 0; n < Integer.length; n++) {
+           document.write(Integer[n] +' ');
+      }
+    </script>
+</body>
+</html>
