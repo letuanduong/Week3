@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng mảng</title>
+    <script src = "w3_using_array.js"></script>
+</head>
+<body>
+    <script>
+        ////noi cac phan tu trong mang////////////
+        let color1 = ['while','red','black', 'blue'];
+        let color2 = new Array('while', 'black', 'blue', 'red');
+        console.log(color1.toString());
+        console.log(color1.join());
+        console.log(color1.join('+'));
+        console.log(color1.join(''));
+        document.write(color2.toString() +'<br>');
+        document.write(color2.join() +'<br>');
+        document.write(color2.join('+') +'<br>');
+        document.write(color2.join('') +'<br>');
+
+        ///////////them ky tu - vao giua ca phan tu trong mang
+        let string = prompt('nhap day so');
+        const str = string.toString();
+        const result = [str[0]];
+        for(let i = 1; i < str.length; i++) {
+            if(str[i-1]%2 === 0 && str[i]%2 === 0) {
+                result.push('-' + str[i]);
+            }
+            else {
+                result.push(str[i]);
+            }
+        }
+        document.write(result.join(''));
+
+///////////////chuyen ky tu thuong sang in hoa va nguoc lai////////////////
+
+        let string_input = prompt('nhap day ky tu');
+        const str = string_input.toString();
+        const change = [];
+        for(let j = 0; j < str.length; j++) {
+            if(CheckString(str[j]) === 1) {
+                change.push(str[j].toLowerCase());
+            } else {
+                change.push(str[j].toUpperCase());
+            }
+        }
+        document.write(change.join(''));
+    </script>
+</body>
+</html>
