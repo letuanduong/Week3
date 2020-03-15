@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra chuỗi đối xứng</title>
+</head>
+<body>
+    <script>
+        let string = prompt('nhap vao chuoi can kiem tra');
+        function CheckString(str, i) {
+            if(i > (str.length - 1 - i))
+                return 1;
+            if(str[i] !== str[(str.length - i - 1)])
+               return 1;
+            CheckString(str, i + 1);
+        }
+        if(CheckString(string, 0) !== 1)
+            alert('Chuỗi đối xứng');
+        else
+            alert('chuỗi KHÔNG đối xứng');
+
+    </script>
+</body>
+</html>
