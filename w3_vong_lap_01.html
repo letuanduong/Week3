@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai tập vòng lặp 01</title>
+</head>
+<body>
+    <script>
+        let CountFibanaci = 2;
+        let m = prompt('nhap so phan tu day fibanaci: ');
+        //in 2 so fibonaci
+        DislayFibonaci(m);
+        //tinh tong 10 phan tu dau tien day fibanaci
+        alert('tong gia tri cua 10 phan tu dau tien dãy fibanci: ' +CountFibanaci);
+        //tim so chia het cho 5 dau tien trong day fibonaci
+        FibonaciDivision5();
+        //Đếm các số từ 1 đến 100
+        Count();
+        //Điều khiển nhiệt độ nhập vào
+        ControTemperature();
+        //tính tổng của 30 số tự nhiên chia hết cho 7
+        document.write('tong cua 30 so tu nhien dau tien chia het cho 7 la: ' +TotalDivision7());
+        //in ra màn hình Fizz Buzz
+        FizzBuzz();
+
+        function Count() {
+
+            for (let i = 1; i < 100; i++) {
+                document.write(i);
+                if (i === 99)
+                    document.write('<br>' + 'hoan thanh' + '<br>');
+            }
+        }
+        /////////////dislay twenty number fibonaci///////////////
+        function DislayFibonaci(n) {
+            let first = 1;
+            let second = 1;
+            let number = 0;
+            if(n === 1)
+                document.write(first);
+            if(n === 2)
+                document.write(second);
+            if(n > 2) {
+                document.write('f(1) =  ' + first + "<br>");
+                document.write('f(2) =  ' + second + "<br>");
+                for (let i = 3; i <= n; i++) {
+                    number = first + second;
+                    CountFibanaci += number;    //tính tổng giá trị của dãy
+                    document.write('f(' + i + ') = ' + number + "<br>");
+                    second = first;
+                    first = number;
+                }
+            }
+            return number;    //trả về giá trị phần tử của hàm
+        }
+
+        ///////////////////contro temperature/////////////////////
+        function ControTemperature() {
+            let input = Number(prompt('nhap nhiet do'));
+            while(1) {
+                if (input > 100)
+                    input = Number(prompt('giam nhiet do xuong duoi 100 độ'));
+                if (input < 20)
+                    input = Number(prompt('tang nhiet do len tren 20 độ'));
+                if (input >= 20 && input <= 100)
+                    break;
+            }
+            alert('nhiet do nhap: ' + input);
+        }
+
+       function FibonaciDivision5() {
+            let m = 2;
+            while (1) {
+                m++;
+                if(DislayFibonaci(m) % 5 === 0)
+                    break;
+            }
+            document.write('so dau tien chia het cho 5 la: ' +DislayFibonaci(m));
+        }
+
+        function TotalDivision7() {
+            let total = 0;
+            let k = 0;
+            let count = 0;
+            while(1){
+                k++;
+                if(k % 7 === 0) {
+                    if(count++ === 30)
+                        break;
+                    total += k;
+                }
+            }
+            return total;
+        }
+        function FizzBuzz() {
+            for(let i = 1; i <=100 ; i++) {
+                if (i%3 === 0 && i%5 === 0) {
+                    document.write('FizzBuzz ' +'&nbsp');
+                } else if (i%3 === 0) {
+                    document.write('Fizz ' + '&nbsp');
+                } else if (i%5 === 0) {
+                    document.write('Buzz ' + '&nbsp');
+                } else {
+                    document.write('&nbsp ' +i +'&nbsp ');
+                }
+                if (i % 10 === 0)
+                    document.write("<br>");
+            }
+        }
+        /////////////////////////game doan so///////////////////
+        function Game() {
+            while (1) {
+                let input = prompt('Moi nhap so');
+                let number = Math.floor(Math.random()*3);
+                if(input == number) {
+                    document.write('Ket qua la: ' + number +' Ban doan chinh xác');
+                    break;
+                } else {
+                    document.write('ket qua là: ' + number + ' ');
+                    document.write("Moi ban doan lai" +"<br>");
+                }
+            }
+        }
+
+    </script>
+    <hr>
+    <h2>GAME DOAN SO</h2>
+    <input type="button" name="button" value="Bắt Đầu Chơi" onclick="Game()" \>
+
+
+</body>
+</html>
