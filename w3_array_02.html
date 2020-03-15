@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 02</title>
+    <script src="w3_using_array.js"></script>
+</head>
+<body>
+    <script>
+        //======================Tạo mảng hai chiều===============
+        let i;
+        let j;
+        let x;
+        const Row = 5;
+        const Col = 5;
+        let Integer1 = [];
+        let Integer2 = [];
+        let Integer3 = [];
+        let Integer4 = [];
+        let Integer5 = [];
+        let Integer6 = [];
+        let count;
+
+
+        for(i = 0; i < Row; i++) {
+            Integer1[i] = [];
+            for(j = 0; j < Col; j++)
+                Integer1[i][j] = Math.floor(Math.random()*20);
+        }
+
+        for(i = 0; i < Row; i++) {
+            for(j = 0; j < Col; j++)
+                document.write(Integer1[i][j]+' ');
+            document.write('<br>');
+        }
+        //======================dao nguoc day ky tu=============
+        document.write('<hr>');
+        let string = prompt('nhap day ky tu');
+        let first = 0;
+        let last = string.length - 1;
+
+        while(first < last) {
+            let b = string[first];
+            string[first] = string[last];
+            string[last] = b;
+            first++;
+            last--;
+
+        }
+        document.write('<br>'+'sau khi dao chuoi: ');
+        for(i = 0; i < string.length; i++) {
+            document.write(string[i] +' ');
+        }
+
+
+        //============đếm ký tự số trong mảng/////////////
+        Integer2 = prompt('nhap ky tự từ bàn phím');
+        count  = 0;
+        for(i = 0; i < Integer2.length; i++) {
+            if(CheckString(Integer2[i]) === 2) {
+                count++;
+            }
+        }
+        document.write('so y tu số trong mảng là: ' +count);
+        document.write('<hr>');
+
+
+        //====================đếm số từ trong 1 chuỗi//////
+        Integer3 = prompt('nhap day ký tự từ bàn phím');
+        count  = 1;
+        for(j = 0; j < Integer3.length; j++) {
+            if (Integer3[j] === ' ')
+                continue;
+            else
+                break;
+        }
+        for (i = j; i < Integer3.length - 1; i++) {
+            if (Integer3[i] === ' ' && Integer3[i+1] !== ' ')
+                count++;
+        }
+        document.write('số chữ trong chuỗi là: ' +count);
+        //==========so sanh 2 chuoi=========
+        document.write('<hr>');
+        count = 0;
+        Integer4 = prompt('nhap day ký tự thứ nhất');
+        Integer5 = prompt('nhap day ky tu thứ hai');
+        if(Integer4.length === Integer5.length) {
+            for(i = 0; i < Integer4.length; i++) {
+                if(Integer4[i] !== Integer5[i])
+                    count++;
+            }
+        }
+        count !== 0 ? document.write('hai chuoi giong nhau') : document.write('chuoi khong giong nhau');
+
+
+        //=======================chèn ký tự vào chuồi==========
+        //===================================================
+        document.write('<hr>');
+        let str = prompt('nhap day ký tự');
+        Integer6 = str.split('-');
+        for(i = 0; i < Integer6.length; i++) {
+            if(Integer6[i] === '-') {
+                Integer6[i] = '+';
+            }
+        }
+        document.write('chuỗi sau khi thay ký tự la:');
+        for (i = 0; i < Integer6.length; i++){
+            document.write(Integer6[i] +' ');
+        }
+
+    </script>
+</body>
+</html>
