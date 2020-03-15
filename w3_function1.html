@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập hàm 1</title>
+</head>
+<body>
+    <script>
+        function alertMessage(n, m) {
+            alert('Xin chào');
+            n++;
+            if(n < m)
+                document.write('tham số thứ nhất nhỏ hơn tham số thứ 2');
+            else
+                document.write('tham số thứ nhất lớn hơn hoặc bằng tham số thứ 2');
+            return n;
+        }
+
+        document.write('giá trị gọi hàm alertMessage là: ' +alertMessage(5) +'<br>');
+        alertMessage(3,5);
+
+
+       function addNumbers() {
+            firstNum = 4;
+            secondNum = 8;
+            result = firstNum + secondNum;
+            return result;
+        }
+        result = 0;
+        result = addNumbers();
+
+        document.write('<br>');
+        let Star = [ 'Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+        let Constellation = new Array('Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo');
+        let string = prompt('Nhập ngôi sao');
+        let count;
+
+        for(let i = 0; i < Star.length; i++) {
+            if(Star[i] === string) {
+                count = i;
+            }
+        }
+        document.write('Thuộc chòm sao: ' +Constellation[count]);
+
+    </script>
+</body>
+</html>
