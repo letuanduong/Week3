@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tử điển Việt Anh</title>
+</head>
+<body>
+    <script>
+        let MauSac = ["đỏ", "vàng", "xanh", "đen", "trắng",];
+        let Color = new Array('Red', 'Yellow', 'blue', 'black', 'while');
+        let string = prompt('nhap từ tiếng việt');
+        let count;
+
+        for(let i = 0; i < MauSac.length; i++) {
+            if(MauSac[i] === string) {
+                count = i;
+            }
+        }
+        document.write('Dịch sang tiếng anh: ' +Color[count]);
+
+    </script>
+</body>
+</html>
